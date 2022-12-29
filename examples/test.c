@@ -1,8 +1,8 @@
-#include <libvector/libvector.h>
+#include <libvector/vector.h>
 #include <stdio.h>
 
 int main() {
-	struct vector *vec = vec_new();
+	vector_t *vec = vec_new();
 
 	char a = 10;
 	vec_push_back(vec, (void*) &a);

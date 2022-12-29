@@ -1,9 +1,9 @@
-#include <include/libvector.h>
+#include <include/vector.h>
 
-struct vector*
+vector_t*
 vec_new(void)
 {
-	struct vector *vec = malloc(sizeof(struct vector));
+	vector_t *vec = malloc(sizeof(vector_t));
 
 	vec->size = 0;
 	vec->capacity = 0;
@@ -12,10 +12,10 @@ vec_new(void)
 	return vec;
 }
 
-struct vector*
+vector_t*
 vec_new_size(u_int32_t size)
 {
-	struct vector *vec = malloc(sizeof(struct vector));
+	vector_t *vec = malloc(sizeof(vector_t));
 	void **array = malloc(size * sizeof(void*));
 
 	vec->size = size;
@@ -26,7 +26,7 @@ vec_new_size(u_int32_t size)
 }
 
 void
-vec_push_back(struct vector* vec, void* value)
+vec_push_back(vector_t* vec, void* value)
 {
 	if(vec->size == vec->capacity) {
 		if(vec->capacity == 0) {
@@ -43,7 +43,7 @@ vec_push_back(struct vector* vec, void* value)
 }
 
 void*
-vec_pop_back(struct vector* vec)
+vec_pop_back(vector_t* vec)
 {
 
 	if(vec->capacity == 1) {
@@ -67,7 +67,7 @@ vec_pop_back(struct vector* vec)
 }
 
 void*
-vec_get(struct vector* vec, u_int32_t index)
+vec_get(vector_t* vec, u_int32_t index)
 {
 	if(index >= vec->size) {
 		return NULL;
@@ -78,7 +78,7 @@ vec_get(struct vector* vec, u_int32_t index)
 
 // Returns old pointer
 void*
-vec_set(struct vector* vec, u_int32_t index, void *value)
+vec_set(vector_t* vec, u_int32_t index, void *value)
 {
 	if(index >= vec->size) {
 		return NULL;
@@ -90,32 +90,32 @@ vec_set(struct vector* vec, u_int32_t index, void *value)
 }
 
 void*
-vec_front(struct vector* vec)
+vec_front(vector_t* vec)
 {
 	return vec_get(vec, 0);
 }
 
 void*
-vec_back(struct vector* vec)
+vec_back(vector_t* vec)
 {
 	return vec_get(vec, vec->size - 1);
 }
 
 u_int32_t
-vec_size(struct vector* vec)
+vec_size(vector_t* vec)
 {
 	return vec->size;
 }
 
 void
-vec_shrink(struct vector* vec)
+vec_shrink(vector_t* vec)
 {
 	vec->array = realloc(vec->array, vec->size * sizeof(void*));
 	vec->capacity = vec->size;
 }
 
 void
-vec_free(struct vector* vec)
+vec_free(vector_t* vec)
 {
 	free(vec->array);
 	free(vec);

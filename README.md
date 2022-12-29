@@ -11,11 +11,11 @@ For installation, please go [here](#installation). For documentation, please go 
 The shown below is a tl;dr version. Proper instructions are [here](#step-1)
 
 ```c
-#include <libvector/libvector.h>
+#include <libvector/vector.h>
 #include <stdio.h>
 
 int main() {
-	struct vector *vec = vec_new();
+	vector_t *vec = vec_new();
 
 	char a = 10;
 	vec_push_back(vec, (void*) &a);
@@ -57,7 +57,7 @@ $ ./test.o
 Import the library:
 
 ```c
-#include <libvector/libvector.h>
+#include <libvector/vector.h>
 ```
 
 **NOTE**: Link the library and dependencies when compiling
@@ -144,28 +144,28 @@ Provide the password when prompted.
 ### Intialization
 
 ```c
-struct vector* vec_new(void); //Initialize empty vector
-struct vector* vec_new_size(u_int32_t size); //Initialize with some initial size
+vector_t* vec_new(void); //Initialize empty vector
+vector_t* vec_new_size(u_int32_t size); //Initialize with some initial size
 ```
 
 ### Push-Pop
 
 ```c
-void vec_push_back(struct vector* vec, void* value);
-void* vec_pop_back(struct vector* vec);
+void vec_push_back(vector_t* vec, void* value);
+void* vec_pop_back(vector_t* vec);
 ```
 
 ### Get-Set
 
 ```c
-void* vec_get(struct vector* vec, u_int32_t index);
-void* vec_set(struct vector* vec, u_int32_t index, void *value);
+void* vec_get(vector_t* vec, u_int32_t index);
+void* vec_set(vector_t* vec, u_int32_t index, void *value);
 ```
 
 ### Free
 
 ```c
-vec_free(vec);
+void vec_free(vector_t* vec);
 ```
 
 **NOTE**: This does **not** free the individual elements of the vector. If you've dynamically allocated them, it's you're responsibility to deallocate them _before_ freeing the vector with this.
@@ -173,8 +173,8 @@ vec_free(vec);
 ### Miscellaneous
 
 ```c
-void* vec_front(struct vector* vec); // Returns first element
-void* vec_back(struct vector* vec); // Returns last element
-u_int32_t vec_size(struct vector* vec); // Returns size of vector
-void vec_shrink(struct vector* vec); // Shrinks the internal array to the number of elements pushed in it.
+void* vec_front(vector_t* vec); // Returns first element
+void* vec_back(vector_t* vec); // Returns last element
+u_int32_t vec_size(vector_t* vec); // Returns size of vector
+void vec_shrink(vector_t* vec); // Shrinks the internal array to the number of elements pushed in it.
 ```
