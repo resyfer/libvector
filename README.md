@@ -121,20 +121,12 @@ vec_free(vec);
 
 Make sure to have [make](https://www.gnu.org/software/make/), [gcc](https://www.gnu.org/software/gcc/) and [git](https://git-scm.com/) installed.
 
-Install all the the dependencies before moving on the next step (preferably in the same order as given below):
-
-- [libqueue](https://github.com/resyfer/libqueue.git)
-
-**NOTE**: Their installation instructions will be provided in their documentation as well.
-
-After installing dependencies, installation of library:
-
 ```bash
-git clone https://github.com/resyfer/libtpool.git
-cd libtpool
+git clone https://github.com/resyfer/libvector.git
+cd libvector
 make install
 cd ..
-rm -rf libtpool
+rm -rf libvector
 ```
 
 Provide the password when prompted.
