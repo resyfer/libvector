@@ -8,7 +8,9 @@ For installation, please go [here](#installation). For documentation, please go
 
 ## Installation
 
-Make sure to have [make](https://www.gnu.org/software/make/), [gcc](https://www.gnu.org/software/gcc/) and [git](https://git-scm.com/) installed.
+Make sure to have [make](https://www.gnu.org/software/make/),
+[gcc](https://www.gnu.org/software/gcc/) and [git](https://git-scm.com/)
+installed.
 
 ```bash
 git clone https://github.com/resyfer/libvector.git
@@ -19,3 +21,17 @@ rm -rf libvector
 ```
 
 Provide the password when prompted.
+
+## Development
+
+Update makefile variable `MODE` to be:
+```sh
+MODE:=dev
+```
+
+and then:
+```sh
+make run # to run the example
+# or
+make test # to run the tests
+```
