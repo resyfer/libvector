@@ -1,18 +1,10 @@
 # libvector
 
 A vector library for C. Easy to use as well as takes in any data type.For
-instructions on basic usage, visit the [examples](/examples).
+instructions on basic usage, visit the [examples](/examples/example.c).
 
 For installation, please go [here](#installation). For documentation, please go
 [here](https://libvector-doxygen.netlify.app/).
-
-### Step 3
-
-Free the vector after use:
-
-```c
-vec_free(vec);
-```
 
 ## Installation
 
