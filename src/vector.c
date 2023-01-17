@@ -62,7 +62,6 @@ changed_cap(vector_t *vec, int64_t change)
 				break;
 			}
 
-			printf("-> %d\n", new_cap);
 			new_cap = (new_cap >> 1);
 		}
 
@@ -90,10 +89,6 @@ resize_internal_array(vector_t *vec, int64_t cap_change)
 	int old_cap = vec->capacity;
 
 	vec->capacity = changed_cap(vec, cap_change);
-
-	if(vec->size > vec->capacity) {
-		vec->size = vec->capacity;
-	}
 
 	if(vec->capacity == 0)
 	{
@@ -234,12 +229,14 @@ vec_remove_many_from_index(vector_t *vec, u_int32_t index, int count)
 {
 	vector_t *removed_items = vec_new_cap(count);
 
-	for(u_int32_t i = count-1; i>=0; i--) {
+	for(u_int32_t i = 0; i < count; i++) {
 		removed_items->array[i] = vec->array[index + i];
-		vec->array[index + i] = vec->array[index+ i + count];
+		vec->array[index + i] = vec->array[index + count + i];
 	}
 
 	resize_internal_array(vec, -count);
+	vec->size-=count;
+	removed_items->size = count;
 	return removed_items;
 }
 

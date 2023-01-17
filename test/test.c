@@ -4,7 +4,7 @@
 
 void push_back_test() {
 
-	printf("\n!!--Vector Initialization Test--!!\n");
+	printf("\n!!--Vector Push Back Test--!!\n");
 
 	int a = 10;
 
@@ -56,6 +56,10 @@ void push_back_test() {
 	assert(vec->capacity == 16);
 
 	printf("✅ Push back another vector to vector\n");
+
+	vec_free(vec);
+
+	printf("✅ Free vector\n");
 }
 
 void insertion_test() {
@@ -66,7 +70,12 @@ void insertion_test() {
 	int a = 10;
 	int index = 0;
 
-	vector_t *vec = vec_new();
+	vector_t *vec = vec_new_cap(2);
+
+	assert(vec_size(vec) == 0);
+	assert(vec->capacity == 2);
+
+	printf("✅ Vector initialization with capacity\n");
 
 	vec_push_back(vec, (void*) &a);
 	vec_push_back(vec, (void*) &a);
@@ -104,21 +113,103 @@ void insertion_test() {
 	assert(vec->capacity == 16);
 
 	printf("✅ Insert many at index %d\n", index);
+
+	vec_free(vec);
 }
 
-void test3() {
+void deletion_test() {
 
+	printf("\n!!--Deletion Test--!!\n");
+
+	int b = 15;
+	int a = 10;
+	int index = 0;
+
+	vector_t *vec = vec_new();
+
+	vec_push_back(vec, (void*) &a);
+	vec_push_back(vec, (void*) &b);
+	vec_push_back(vec, (void*) &a);
+	vec_push_back(vec, (void*) &b);
+	vec_push_back(vec, (void*) &a);
+	vec_push_back(vec, (void*) &b);
+
+	assert(*((int*) vec_pop_back(vec)) == b);
+	assert(vec_size(vec) == 5);
+	assert(vec->capacity == 8);
+	assert(*((int*) vec_pop_back(vec)) == a);
+	assert(vec_size(vec) == 4);
+	assert(vec->capacity == 4);
+
+	printf("✅ Pop back\n");
+
+	vec_push_back(vec, (void*) &a);
+	vec_push_back(vec, (void*) &b);
+
+	assert(*((int*)vec_remove_from_index(vec, index)) == a);
+	assert(vec_size(vec) == 5);
+
+	printf("✅ Remove from index %d\n", index);
+
+	index = 3;
+	assert(*((int*)vec_remove_from_index(vec, index)) == b);
+	assert(vec_size(vec) == 4);
+	vec_insert_at_index(vec, index, (void*) &a);
+	vec_insert_at_index(vec, index, (void*) &b);
+
+	printf("✅ Remove from index %d\n", index);
+
+	index = 1;
+	vector_t *removed_elems = vec_remove_many_from_index(vec, index, 3);
+
+	assert(vec_size(removed_elems) == 3);
+	assert(*((int*)removed_elems->array[0]) == b);
+	assert(*((int*)removed_elems->array[1]) == a);
+	assert(removed_elems->capacity == 4);
+
+	assert(vec_size(vec) == 3);
+	assert(*((int*) vec_get(vec, 1)) == a);
+
+	printf("✅ Remove many from index %d\n", index);
 }
 
-void test4() {
+void util_test() {
 
+	printf("\n!!--Util Test--!!\n");
+
+	int b = 15;
+	int a = 10;
+	int index = 1;
+
+	vector_t *vec = vec_new();
+
+	vec_push_back(vec, (void*) &a);
+	vec_push_back(vec, (void*) &b);
+	vec_push_back(vec, (void*) &a);
+	vec_push_back(vec, (void*) &b);
+	vec_push_back(vec, (void*) &a);
+	vec_push_back(vec, (void*) &b);
+
+	assert(*((int*)vec_get(vec, index)) == b);
+
+	printf("✅ Vector get element at index %d\n", index);
+
+	vec_set(vec, index, (void*) &a);
+
+	assert(*((int*)vec_get(vec, index)) == a);
+
+	printf("✅ Vector set element at index %d\n", index);
+
+	assert(vec_size(vec) == 6);
+
+	printf("✅ Vector size\n");
 }
 
 int main() {
 	push_back_test();
 	insertion_test();
-	test3();
-	test4();
+	deletion_test();
+	util_test();
 
 	return 0;
 }
