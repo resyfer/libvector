@@ -1,0 +1,22 @@
+\hypertarget{util_8h_source}{}\doxysection{util.\+h}
+\label{util_8h_source}\index{include/util.h@{include/util.h}}
+\mbox{\hyperlink{util_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_\_LIBEXPRESS\_UTIL\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_LIBEXPRESS\_UTIL\_H 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <libcol/col.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{21 \textcolor{keywordtype}{void} \mbox{\hyperlink{util_8h_a5312bc0f632381c9d4a041ed5ae65ee1}{print\_info}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *msg, color\_t color, \textcolor{keywordtype}{bool} exit\_process,}
+\DoxyCodeLine{22                 \textcolor{keywordtype}{bool} print\_line, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* file, \textcolor{keywordtype}{int} line);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define success(msg) print\_info(msg, GREEN, false, false, NULL, 0);}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define warning(msg) print\_info(msg, YELLOW, false, false, NULL, 0);}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define error(msg) print\_info(msg, RED, true, true, \_\_FILE\_\_, \_\_LINE\_\_);}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

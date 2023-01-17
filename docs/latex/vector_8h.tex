@@ -1,0 +1,355 @@
+\hypertarget{vector_8h}{}\doxysection{include/vector.h File Reference}
+\label{vector_8h}\index{include/vector.h@{include/vector.h}}
+
+
+This is the entry header file to the library.  
+
+
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structvector__t}{vector\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Vector instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ \mbox{\hyperlink{vector_8h_ae67a76251d123b80a6522c722b7e743d}{vec\+\_\+new\+\_\+cap}} (u\+\_\+int32\+\_\+t cap)
+\begin{DoxyCompactList}\small\item\em New vector instance with the capacity to the nearest greater power of 2 to the capacity specified. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ \mbox{\hyperlink{vector_8h_a95fcc00e55762e0ad155c171cd37f9ba}{vec\+\_\+new}} (void)
+\begin{DoxyCompactList}\small\item\em Get a new empty vector instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_af0e36ced96adf3ff3c91d736faa1589a}{vec\+\_\+insert\+\_\+many\+\_\+at\+\_\+index}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec, u\+\_\+int32\+\_\+t index, u\+\_\+int32\+\_\+t count,...)
+\begin{DoxyCompactList}\small\item\em Insert many elements at given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_ab56a73c0a219de63cce1acfe41733ae9}{vec\+\_\+insert\+\_\+at\+\_\+index}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec, u\+\_\+int32\+\_\+t index, void $\ast$value)
+\begin{DoxyCompactList}\small\item\em Insert an element at given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_ade21caf224a2b9774a1765f7a4070870}{vec\+\_\+push\+\_\+back\+\_\+vec}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$dest, \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$src)
+\begin{DoxyCompactList}\small\item\em Add the elements of a {\ttfamily source} vector to the end of {\ttfamily destination} vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_a6c226cc98c3348ad25dcfaab83416cc7}{vec\+\_\+push\+\_\+back}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec, void $\ast$value)
+\begin{DoxyCompactList}\small\item\em Add an element to the end of the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ \mbox{\hyperlink{vector_8h_a48edaa144ae83583edd0b9a69db86010}{vec\+\_\+remove\+\_\+many\+\_\+from\+\_\+index}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec, u\+\_\+int32\+\_\+t index, int count)
+\begin{DoxyCompactList}\small\item\em Remove many elements from the index. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{vector_8h_a916ee95bbb1a0d6fedfcc37740256580}{vec\+\_\+remove\+\_\+from\+\_\+index}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec, u\+\_\+int32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Remove an element from an index. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{vector_8h_a62fab0c4da91181096ffb5d956401544}{vec\+\_\+pop\+\_\+back}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec)
+\begin{DoxyCompactList}\small\item\em Remove the last element of the vector. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{vector_8h_a050a15ee11b87f6d407bf14f8d7daadf}{vec\+\_\+get}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec, u\+\_\+int32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Get the element at an index. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{vector_8h_adf35fa164c9fa5040e4d1affede507fe}{vec\+\_\+set}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec, u\+\_\+int32\+\_\+t index, void $\ast$value)
+\begin{DoxyCompactList}\small\item\em Set the value of the element at the given index. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{vector_8h_a1e0233272dc47af4265837ae83c5e04c}{vec\+\_\+front}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec)
+\begin{DoxyCompactList}\small\item\em First element of the vector. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{vector_8h_a54041bc7c4fc2da21d81e7e8f143ac1b}{vec\+\_\+back}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec)
+\begin{DoxyCompactList}\small\item\em Last element of the vector. \end{DoxyCompactList}\item 
+u\+\_\+int32\+\_\+t \mbox{\hyperlink{vector_8h_a01d69a57567b9dc5c92199ec05de2be3}{vec\+\_\+size}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec)
+\begin{DoxyCompactList}\small\item\em Size of the vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_a7a2d07ef3559255995b5410d0ce8e4a8}{vec\+\_\+shrink}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec)
+\begin{DoxyCompactList}\small\item\em Fit the internal array to be only as long as the number of elements present inside it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_acf3cf13ce878d0508316d6e7a2f8b6a7}{vec\+\_\+free}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$vec)
+\begin{DoxyCompactList}\small\item\em Free up vector instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the entry header file to the library. 
+
+\begin{DoxyAuthor}{Author}
+Saurav Pal (resyfer) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000002}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vector_8h_a54041bc7c4fc2da21d81e7e8f143ac1b}\label{vector_8h_a54041bc7c4fc2da21d81e7e8f143ac1b}} 
+\index{vector.h@{vector.h}!vec\_back@{vec\_back}}
+\index{vec\_back@{vec\_back}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_back()}{vec\_back()}}
+{\footnotesize\ttfamily void $\ast$ vec\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec }\end{DoxyParamCaption})}
+
+
+
+Last element of the vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ Last element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vector_8h_acf3cf13ce878d0508316d6e7a2f8b6a7}\label{vector_8h_acf3cf13ce878d0508316d6e7a2f8b6a7}} 
+\index{vector.h@{vector.h}!vec\_free@{vec\_free}}
+\index{vec\_free@{vec\_free}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_free()}{vec\_free()}}
+{\footnotesize\ttfamily void vec\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec }\end{DoxyParamCaption})}
+
+
+
+Free up vector instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This does not free up any dynamically allocated memory for individual elements kept in the vector. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{vector_8h_a1e0233272dc47af4265837ae83c5e04c}\label{vector_8h_a1e0233272dc47af4265837ae83c5e04c}} 
+\index{vector.h@{vector.h}!vec\_front@{vec\_front}}
+\index{vec\_front@{vec\_front}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_front()}{vec\_front()}}
+{\footnotesize\ttfamily void $\ast$ vec\+\_\+front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec }\end{DoxyParamCaption})}
+
+
+
+First element of the vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ First element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vector_8h_a050a15ee11b87f6d407bf14f8d7daadf}\label{vector_8h_a050a15ee11b87f6d407bf14f8d7daadf}} 
+\index{vector.h@{vector.h}!vec\_get@{vec\_get}}
+\index{vec\_get@{vec\_get}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_get()}{vec\_get()}}
+{\footnotesize\ttfamily void $\ast$ vec\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec,  }\item[{u\+\_\+int32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Get the element at an index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance \\
+\hline
+{\em index} & Index of the element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ Element at the given index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vector_8h_ab56a73c0a219de63cce1acfe41733ae9}\label{vector_8h_ab56a73c0a219de63cce1acfe41733ae9}} 
+\index{vector.h@{vector.h}!vec\_insert\_at\_index@{vec\_insert\_at\_index}}
+\index{vec\_insert\_at\_index@{vec\_insert\_at\_index}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_insert\_at\_index()}{vec\_insert\_at\_index()}}
+{\footnotesize\ttfamily void vec\+\_\+insert\+\_\+at\+\_\+index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec,  }\item[{u\+\_\+int32\+\_\+t}]{index,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Insert an element at given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance. \\
+\hline
+{\em index} & Index to insert element at \\
+\hline
+{\em value} & Element to insert at index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vector_8h_af0e36ced96adf3ff3c91d736faa1589a}\label{vector_8h_af0e36ced96adf3ff3c91d736faa1589a}} 
+\index{vector.h@{vector.h}!vec\_insert\_many\_at\_index@{vec\_insert\_many\_at\_index}}
+\index{vec\_insert\_many\_at\_index@{vec\_insert\_many\_at\_index}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_insert\_many\_at\_index()}{vec\_insert\_many\_at\_index()}}
+{\footnotesize\ttfamily void vec\+\_\+insert\+\_\+many\+\_\+at\+\_\+index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec,  }\item[{u\+\_\+int32\+\_\+t}]{index,  }\item[{u\+\_\+int32\+\_\+t}]{count,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Insert many elements at given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance \\
+\hline
+{\em index} & Index to insert elements to \\
+\hline
+{\em count} & Number of elements to insert \\
+\hline
+{\em ...} & Elements of the type {\ttfamily void$\ast$}, as many as needed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vector_8h_a95fcc00e55762e0ad155c171cd37f9ba}\label{vector_8h_a95fcc00e55762e0ad155c171cd37f9ba}} 
+\index{vector.h@{vector.h}!vec\_new@{vec\_new}}
+\index{vec\_new@{vec\_new}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_new()}{vec\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ vec\+\_\+new (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get a new empty vector instance. 
+
+\begin{DoxyReturn}{Returns}
+vector\+\_\+t$\ast$ Vector instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vector_8h_ae67a76251d123b80a6522c722b7e743d}\label{vector_8h_ae67a76251d123b80a6522c722b7e743d}} 
+\index{vector.h@{vector.h}!vec\_new\_cap@{vec\_new\_cap}}
+\index{vec\_new\_cap@{vec\_new\_cap}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_new\_cap()}{vec\_new\_cap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ vec\+\_\+new\+\_\+cap (\begin{DoxyParamCaption}\item[{u\+\_\+int32\+\_\+t}]{cap }\end{DoxyParamCaption})}
+
+
+
+New vector instance with the capacity to the nearest greater power of 2 to the capacity specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap} & Capacity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector\+\_\+t$\ast$ Vector instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vector_8h_a62fab0c4da91181096ffb5d956401544}\label{vector_8h_a62fab0c4da91181096ffb5d956401544}} 
+\index{vector.h@{vector.h}!vec\_pop\_back@{vec\_pop\_back}}
+\index{vec\_pop\_back@{vec\_pop\_back}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_pop\_back()}{vec\_pop\_back()}}
+{\footnotesize\ttfamily void $\ast$ vec\+\_\+pop\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec }\end{DoxyParamCaption})}
+
+
+
+Remove the last element of the vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ Removed element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vector_8h_a6c226cc98c3348ad25dcfaab83416cc7}\label{vector_8h_a6c226cc98c3348ad25dcfaab83416cc7}} 
+\index{vector.h@{vector.h}!vec\_push\_back@{vec\_push\_back}}
+\index{vec\_push\_back@{vec\_push\_back}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_push\_back()}{vec\_push\_back()}}
+{\footnotesize\ttfamily void vec\+\_\+push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Add an element to the end of the vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance \\
+\hline
+{\em value} & Value to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vector_8h_ade21caf224a2b9774a1765f7a4070870}\label{vector_8h_ade21caf224a2b9774a1765f7a4070870}} 
+\index{vector.h@{vector.h}!vec\_push\_back\_vec@{vec\_push\_back\_vec}}
+\index{vec\_push\_back\_vec@{vec\_push\_back\_vec}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_push\_back\_vec()}{vec\_push\_back\_vec()}}
+{\footnotesize\ttfamily void vec\+\_\+push\+\_\+back\+\_\+vec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+
+
+Add the elements of a {\ttfamily source} vector to the end of {\ttfamily destination} vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Destination vector instance \\
+\hline
+{\em src} & Source vector instance \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vector_8h_a916ee95bbb1a0d6fedfcc37740256580}\label{vector_8h_a916ee95bbb1a0d6fedfcc37740256580}} 
+\index{vector.h@{vector.h}!vec\_remove\_from\_index@{vec\_remove\_from\_index}}
+\index{vec\_remove\_from\_index@{vec\_remove\_from\_index}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_remove\_from\_index()}{vec\_remove\_from\_index()}}
+{\footnotesize\ttfamily void $\ast$ vec\+\_\+remove\+\_\+from\+\_\+index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec,  }\item[{u\+\_\+int32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Remove an element from an index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance \\
+\hline
+{\em index} & Index to remove element from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ The element removed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vector_8h_a48edaa144ae83583edd0b9a69db86010}\label{vector_8h_a48edaa144ae83583edd0b9a69db86010}} 
+\index{vector.h@{vector.h}!vec\_remove\_many\_from\_index@{vec\_remove\_many\_from\_index}}
+\index{vec\_remove\_many\_from\_index@{vec\_remove\_many\_from\_index}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_remove\_many\_from\_index()}{vec\_remove\_many\_from\_index()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ vec\+\_\+remove\+\_\+many\+\_\+from\+\_\+index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec,  }\item[{u\+\_\+int32\+\_\+t}]{index,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Remove many elements from the index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance \\
+\hline
+{\em index} & Index to remove elements from \\
+\hline
+{\em count} & Number of elements to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector\+\_\+t$\ast$ Vector of the removed instances 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vector_8h_adf35fa164c9fa5040e4d1affede507fe}\label{vector_8h_adf35fa164c9fa5040e4d1affede507fe}} 
+\index{vector.h@{vector.h}!vec\_set@{vec\_set}}
+\index{vec\_set@{vec\_set}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_set()}{vec\_set()}}
+{\footnotesize\ttfamily void $\ast$ vec\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec,  }\item[{u\+\_\+int32\+\_\+t}]{index,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the value of the element at the given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance \\
+\hline
+{\em index} & Index of the element \\
+\hline
+{\em value} & New value of element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ Old value of element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vector_8h_a7a2d07ef3559255995b5410d0ce8e4a8}\label{vector_8h_a7a2d07ef3559255995b5410d0ce8e4a8}} 
+\index{vector.h@{vector.h}!vec\_shrink@{vec\_shrink}}
+\index{vec\_shrink@{vec\_shrink}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_shrink()}{vec\_shrink()}}
+{\footnotesize\ttfamily void vec\+\_\+shrink (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec }\end{DoxyParamCaption})}
+
+
+
+Fit the internal array to be only as long as the number of elements present inside it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vector_8h_a01d69a57567b9dc5c92199ec05de2be3}\label{vector_8h_a01d69a57567b9dc5c92199ec05de2be3}} 
+\index{vector.h@{vector.h}!vec\_size@{vec\_size}}
+\index{vec\_size@{vec\_size}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_size()}{vec\_size()}}
+{\footnotesize\ttfamily u\+\_\+int32\+\_\+t vec\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{vec }\end{DoxyParamCaption})}
+
+
+
+Size of the vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+u\+\_\+int32\+\_\+t Size 
+\end{DoxyReturn}

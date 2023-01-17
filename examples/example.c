@@ -2,31 +2,45 @@
 #include <stdio.h>
 
 int main() {
+
+	// Initialize empty vector instance
 	vector_t *vec = vec_new();
 
-	// char a = 10;
-	// vec_push_back(vec, (void*) &a);
+	// Add an element of any data type to the end of the vector
+	char a = 10;
+	vec_push_back(vec, (void*) &a);
 
-	// int b = 15;
-	// vec_push_back(vec, (void*) &b);
+	int b = 15;
+	vec_push_back(vec, (void*) &b);
 
-	// char *c = "hello world";
-	// vec_push_back(vec, (void*) c);
+	char *c = "hello world";
+	vec_push_back(vec, (void*) c);
 
-	// int *d = vec_get(vec, 1);
-	// printf("%d\n", *d);
+	// Remove the last element from vector
+	char *d = vec_pop_back(vec);
+	printf("%s\n", d);
 
-	// char *e = vec_pop_back(vec);
-	// printf("%s\n", e);
+	// Get element at an index
+	int *e = vec_get(vec, 1);
+	printf("%d\n", *e);
 
-	// int f = 30;
-	// int *g = vec_set(vec, 1, &f);
-	// printf("%d\n", *g);
+	// Update value of element at index
+	int f = 30;
+	int *g = vec_set(vec, 1, &f);
+	printf("%d\n", *g);
 
-	// int *h = vec_back(vec);
-	// printf("%d\n", *h);
+	// Get first element of vector.
+	int *h = vec_back(vec);
+	printf("%d\n", *h);
 
-	// vec_free(vec);
+	// Get last element of vector.
+	int *i = vec_back(vec);
+	printf("%d\n", *i);
+
+	// Check documentation for further operations on vectors.
+
+	// Free the vector
+	vec_free(vec);
 
 	return 0;
 }

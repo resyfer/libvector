@@ -5,6 +5,7 @@
  * @author Saurav Pal (resyfer)
  * @bug No known bugs
  */
+
 #ifndef __LIBEXPRESS_UTIL_H
 #define __LIBEXPRESS_UTIL_H 1
 
@@ -39,7 +40,5 @@ void print_info(const char *msg, color_t color, bool exit_process,
  * @brief Print error and exit
  */
 #define error(msg) print_info(msg, RED, true, true, __FILE__, __LINE__);
-
-#define SMALL_MAP 5
 
 #endif

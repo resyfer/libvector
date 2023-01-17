@@ -1,8 +1,33 @@
+/**
+ * @file vector.h
+ * @brief This is the entry header file to the library.
+ *
+ * @author Saurav Pal (resyfer)
+ * @bug No known bugs
+ */
+
 #ifndef __LIBVECTOR_H
 #define __LIBVECTOR_H 1
 
 /* libc */
 #include <sys/types.h>
+
+/**
+ * @mainpage
+ * A vector is a dynamic contiguous data structure, ie. a dynamic array
+ * and resizes according to need. It resizes to a size of nearest power of 2
+ * that can fit all the elements of the vector.
+ *
+ * Elements can be added to or removed from the vector as an when required at
+ * any given index.
+ *
+ * Adding elements to the end of vector (ie. push_back) can take an average
+ * time complexity of O(1), but can take O(n) when it fills up and has to resize.
+ * Same goes for removing elements from the back of the vector.
+ *
+ * Adding and removing elements from any other index in the array takes O(n)
+ * average time complexity.
+ */
 
 /**
  * @brief Vector instance.
@@ -11,9 +36,9 @@
  * everytime it fills up.
  */
 typedef struct {
-	u_int32_t size;
-	u_int32_t capacity;
-	void **array;
+	u_int32_t size; /*!< size of vector */
+	u_int32_t capacity; /*!< maximum current capacity */
+	void **array;  /*!< internal array of vector */
 } vector_t;
 
 /* Create Vector */
