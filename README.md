@@ -1,49 +1,13 @@
 # libvector
 
-A vector library for C. Easy to use as well as takes in any data type. For instructions on usage, please go [here](#usage).
+A vector library for C. Easy to use as well as takes in any data type.For
+instructions on usage, please go [here](#usage) and for examples visit this
+[file](/examples/example.c)
 
-For installation, please go [here](#installation). For documentation, please go [here](#documentation).
+For installation, please go [here](#installation). For documentation, please go
+[here](#documentation).
 
 ## Usage
-
-### TL;DR
-
-The shown below is a tl;dr version. Proper instructions are [here](#step-1)
-
-```c
-#include <libvector/vector.h>
-#include <stdio.h>
-
-int main() {
-	vector_t *vec = vec_new();
-
-	char a = 10;
-	vec_push_back(vec, (void*) &a);
-
-	int b = 15;
-	vec_push_back(vec, (void*) &b);
-
-	char *c = "hello world";
-	vec_push_back(vec, (void*) c);
-
-	int *d = vec_get(vec, 1);
-	printf("%d\n", *d);
-
-	char *e = vec_pop_back(vec);
-	printf("%s\n", e);
-
-	int f = 30;
-	int *g = vec_set(vec, 1, &f);
-	printf("%d\n", *g);
-
-	int *h = vec_back(vec);
-	printf("%d\n", *h);
-
-	vec_free(vec);
-
-	return 0;
-}
-```
 
 Compile and run:
 
