@@ -8,10 +8,13 @@ SRC_DIR:=src
 OBJ_DIR:=obj
 DEP_DIR:=$(OBJ_DIR)
 HEAD_DIR:=include
+TEST_DIR:=test
+EXAMPLE_DIR:=example
 
 INC_DIR:=.
 
 TEST:=test
+EXAMPLE:=example
 
 SRCFILES:=$(shell find $(SRC_DIR) -type f -name "*.c")
 OBJFILES := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCFILES))
@@ -37,10 +40,15 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile $(OBJ_DIR)
 $(OBJ_DIR):
 	@mkdir $(OBJ_DIR) 2> /dev/null
 
-run: install
-	@$(CC) $(CFLAGS) -o ./examples/$(TEST).o ./examples/$(TEST).c -lvector
+test: install
+	@$(CC) $(CFLAGS) -o ./$(TEST_DIR)/$(TEST).o ./$(TEST_DIR)/$(TEST).c -lvector -lcol
 	@echo "------------"
-	@./examples/$(TEST).o
+	@./$(TEST_DIR)/$(TEST).o
+
+run: install
+	@$(CC) $(CFLAGS) -o ./$(EXAMPLE_DIR)/$(TEST).o ./$(EXAMPLE_DIR)/$(EXAMPLE).c -lvector -lcol
+	@echo "------------"
+	@./$(EXAMPLE_DIR)/$(TEST).o
 
 install: $(NAME).so $(HEAD_DIR)/$(ENTRY).h
 	@echo "Installing..."
