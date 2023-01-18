@@ -104,9 +104,8 @@ resize_internal_array(vector_t *vec, int64_t cap_change)
 }
 
 vector_t*
-vec_new_cap(u_int32_t cap)
+vec_new_cap(vector_t* vec, u_int32_t cap)
 {
-	vector_t *vec = malloc(sizeof(vector_t));
 	vec->size = 0;
 	vec->capacity = 0;
 	vec->array = NULL;
@@ -121,9 +120,9 @@ vec_new_cap(u_int32_t cap)
 }
 
 vector_t*
-vec_new(void)
+vec_new(vector_t* vec)
 {
-	return vec_new_cap(0);
+	return vec_new_cap(vec, 0);
 }
 
 void
@@ -177,12 +176,11 @@ vec_push_back(vector_t* vec, void* value)
 }
 
 vector_t*
-vec_remove_many_from_index(vector_t *vec, u_int32_t index, int count)
+vec_remove_many_from_index(vector_t *vec, u_int32_t index, int count,
+							vector_t* removed_items)
 {
-	vector_t *removed_items = vec_new_cap(count);
-
 	for(u_int32_t i = 0; i < count; i++) {
-		removed_items->array[i] = vec->array[index + i];
+		vec_push_back(removed_items, vec->array[index + i]);
 		vec->array[index + i] = vec->array[index + count + i];
 	}
 
@@ -195,8 +193,9 @@ vec_remove_many_from_index(vector_t *vec, u_int32_t index, int count)
 void*
 vec_remove_from_index(vector_t *vec, u_int32_t index)
 {
-	vector_t *removed_item = vec_remove_many_from_index(vec, index, 1);
-	return removed_item->array[0];
+	vector_t removed_item;
+	vec_remove_many_from_index(vec, index, 1, &removed_item);
+	return removed_item.array[0];
 }
 
 void*
@@ -251,5 +250,4 @@ void
 vec_free(vector_t* vec)
 {
 	free(vec->array);
-	free(vec);
 }

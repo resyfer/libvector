@@ -50,14 +50,14 @@ typedef struct {
  * @param cap Capacity
  * @return vector_t* Vector instance
  */
-vector_t* vec_new_cap(u_int32_t cap);
+vector_t* vec_new_cap(vector_t* vec, u_int32_t cap);
 
 /**
  * @brief Get a new empty vector instance.
  *
  * @return vector_t* Vector instance
  */
-vector_t* vec_new(void);
+vector_t* vec_new(vector_t* vec);
 
 /* CRUD */
 
@@ -106,7 +106,8 @@ vec_push_back(vector_t* vec, void* value);
  * @param count Number of elements to remove
  * @return vector_t* Vector of the removed instances
  */
-vector_t* vec_remove_many_from_index(vector_t *vec, u_int32_t index, int count);
+vector_t* vec_remove_many_from_index(vector_t *vec, u_int32_t index, int count,
+									vector_t* removed_items);
 
 /**
  * @brief Remove an element from an index.
